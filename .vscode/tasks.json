@@ -1,0 +1,193 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "AWS Reports Frontend",
+			"type": "shell",
+			"command": "C:\\Program Files\\nodejs\\npm.cmd",
+			"args": [
+				"--prefix",
+				"frontend",
+				"run",
+				"dev",
+				"--",
+				"--host",
+				"127.0.0.1",
+				"--port",
+				"5173"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "AWS Reports Backend",
+			"type": "shell",
+			"command": "C:\\Users\\sreek\\OneDrive\\Desktop\\aws-nightly-reports\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"uvicorn",
+				"app.main:app",
+				"--app-dir",
+				"backend",
+				"--host",
+				"127.0.0.1",
+				"--port",
+				"8000"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Install Frontend Dependencies",
+			"type": "shell",
+			"command": "C:\\Program Files\\nodejs\\npm.cmd",
+			"args": [
+				"--prefix",
+				"frontend",
+				"install"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Locate Node Runtime",
+			"type": "shell",
+			"command": "where",
+			"args": [
+				"node"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Find Node Binary",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/c",
+				"where /R C:\\ node.exe"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Node Installers",
+			"type": "shell",
+			"command": "winget",
+			"args": [
+				"--version"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Install Node.js LTS",
+			"type": "shell",
+			"command": "winget",
+			"args": [
+				"install",
+				"--id",
+				"OpenJS.NodeJS.LTS",
+				"--exact",
+				"--silent",
+				"--accept-package-agreements",
+				"--accept-source-agreements"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Download Portable Node",
+			"type": "shell",
+			"command": "curl.exe",
+			"args": [
+				"-L",
+				"https://nodejs.org/dist/v22.14.0/node-v22.14.0-win-x64.zip",
+				"-o",
+				"node-portable.zip"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Download Node Zip",
+			"type": "shell",
+			"command": "C:\\Users\\sreek\\OneDrive\\Desktop\\aws-nightly-reports\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-c",
+				"import urllib.request; urllib.request.urlretrieve('https://nodejs.org/dist/v22.14.0/node-v22.14.0-win-x64.zip','node-portable.zip')"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Download Node Zip 2",
+			"type": "shell",
+			"command": "C:\\Users\\sreek\\OneDrive\\Desktop\\aws-nightly-reports\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-c",
+				"import urllib.request; urllib.request.urlretrieve(\"https://nodejs.org/dist/v22.14.0/node-v22.14.0-win-x64.zip\",\"node-portable.zip\")"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "AWS Reports Frontend Portable",
+			"type": "shell",
+			"command": "C:\\Users\\sreek\\OneDrive\\Desktop\\aws-nightly-reports\\node-v22.14.0-win-x64\\node.exe",
+			"args": [
+				"frontend/node_modules/vite/bin/vite.js",
+				"dev",
+				"--host",
+				"127.0.0.1",
+				"--port",
+				"5173"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "AWS Reports Frontend Correct Root",
+			"type": "shell",
+			"command": "C:\\Users\\sreek\\OneDrive\\Desktop\\aws-nightly-reports\\node-v22.14.0-win-x64\\node.exe",
+			"args": [
+				"frontend/node_modules/vite/bin/vite.js",
+				"frontend",
+				"--host",
+				"127.0.0.1",
+				"--port",
+				"5173"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "AWS Reports Frontend Final",
+			"type": "shell",
+			"command": "C:\\Users\\sreek\\OneDrive\\Desktop\\aws-nightly-reports\\node-v22.14.0-win-x64\\node.exe",
+			"args": [
+				"frontend/node_modules/vite/bin/vite.js",
+				"--root",
+				"frontend",
+				"--host",
+				"127.0.0.1",
+				"--port",
+				"5174"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "AWS Reports Frontend Working",
+			"type": "shell",
+			"command": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"Set-Location frontend; & '..\\node-v22.14.0-win-x64\\node.exe' 'node_modules/vite/bin/vite.js' '--host' '127.0.0.1' '--port' '5174'"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}
